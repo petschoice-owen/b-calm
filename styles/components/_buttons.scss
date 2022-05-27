@@ -1,0 +1,36 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.btn-gold-outline {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 10px 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    color: $secondary-color;
+    background-color: transparent;
+    border-radius: 0;
+    border: 2px solid $secondary-color;
+    transition: .35s ease-in-out all;
+    
+    @include on-event {
+        color: $brand-color;
+        text-decoration: none;
+        background-color: $secondary-color;    
+    }
+
+    @media (max-width: 991px) {
+        font-size: 15px;
+    }
+
+    @media (max-width: 767px) {
+        font-size: 14px;
+    }
+}

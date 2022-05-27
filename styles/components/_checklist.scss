@@ -1,0 +1,124 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the checklist component.
+// -----------------------------------------------------------------------------
+
+.checklist {
+    list-style: none;
+
+    li {
+        position: relative;
+        padding-left: 5px;
+        line-height: 1.8;
+        
+        &:before {
+            content: "";
+            position: absolute;
+            top: 8px;
+            left: -35px;
+            width: 24px;
+            height: 22px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+    }
+
+    &-white {
+        li:before {
+            background-image: url(../assets/images/icon-check-white.png);
+        }
+    }
+
+    &-green {
+        li:before {
+            background-image: url(../assets/images/icon-check-green.png);
+        }
+    }
+
+    @media (max-width: 991px) {
+        li {
+            padding-left: 0;
+
+            &:before {
+                top: 11px;
+                width: 20px;
+                height: 16px;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        li:before {
+            top: 8px;
+            left: -30px;
+            width: 18px;
+            height: 14px;
+        }
+    }
+}
+
+.checklist-small {
+    list-style: none;
+    
+    li {
+        position: relative;
+        line-height: 1.4;
+        
+        &:before {
+            content: "";
+            position: absolute;
+            top: 6px;
+            left: -38px;
+            width: 22px;
+            height: 17px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        & + li {
+            margin-top: 25px;
+        }
+    }
+
+    &-white {
+        li:before {
+            background-image: url(../assets/images/icon-check-white.png);
+        }
+    }
+
+    &-green {
+        li:before {
+            background-image: url(../assets/images/icon-check-green.png);
+        }
+    }
+
+    @media (max-width: 991px) {
+        li {
+            &:before {
+                top: 4px;
+                left: -36px;
+            }
+
+            & + li {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        li {
+            &:before {
+                left: -30px;
+                width: 20px;
+                height: 16px;
+            }
+
+            & + li {
+                margin-top: 15px;
+            }
+        }
+    }
+}

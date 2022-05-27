@@ -1,0 +1,113 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the accordion component.
+// -----------------------------------------------------------------------------
+
+.accordion {
+    .accordion-item {
+        border-radius: 0;
+    }
+
+    .accordion-button {
+        padding: 12px 20px;
+        font-size: 20px;
+        color: $brand-color;
+        background-color: $secondary-color;
+        box-shadow: none;
+        border: 1px solid #fff;
+
+        &:after {
+            width: 20px;
+            height: 12px;
+            background-image: url(../assets/images/icon-arrow-down-green.png);
+            background-size: contain;
+            background-position: center;
+        }
+    }
+
+    .accordion-body {
+        padding: 30px 20px;
+        font-size: 16px;
+        color: $brand-color;
+        background-color: #eadbb8;
+
+        a {
+            color: $brand-color;
+            text-decoration: underline;
+        }
+
+        * + * {
+            margin-top: 15px;
+        }
+
+        li + li {
+            margin-top: 5px;
+        }
+
+        ul {
+            list-style: square;
+
+            ul {
+                padding-left: 20px;
+                list-style: circle;
+            }
+
+            ol {
+                padding-left: 17px;
+            }
+        }
+
+        ol {
+            ol {
+                padding-left: 17px;
+            }
+
+            ul {
+                padding-left: 20px;
+                list-style: circle;
+            }
+        }
+    }
+
+    p, ul, ol, li, label, input, textarea {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 991px) {
+        .accordion-button {
+            font-size: 18px;
+        }
+
+        p, ul, ol, li, label, input, textarea {
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .accordion-button {
+            padding: 12px 15px;
+            font-size: 16px;
+
+            &:after {
+                width: 18px;
+                height: 11px;
+            }
+        }
+
+        p, ul, ol, li, label, input, textarea {
+            font-size: 14px;
+        }
+
+        .accordion-body {
+            * + * {
+                margin-top: 10px;
+            }
+
+            li + li {
+                margin-top: 3px;
+            }
+        }
+    }
+}

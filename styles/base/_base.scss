@@ -1,0 +1,130 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+::selection {
+    color: #fff;
+    background: $secondary-color;
+}
+
+::-moz-selection {
+    color: #fff;
+    background: $secondary-color;
+}
+
+body {
+    background-color: #fcfcfc;
+    scroll-behavior: smooth;
+}
+
+
+/**
+* Basic styles for links
+*/
+a {
+    color: $brand-color;
+    text-decoration: none;
+
+    @include on-event {
+        color: $text-color;
+        text-decoration: underline;
+    }
+}
+  
+.btn, a {
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+
+    @include on-event {
+        outline: 0;
+        @include boxshadow(none);
+    }
+}
+  
+/**
+* Basic styles for input fields
+*/
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-focus-ring-color: none;
+    outline: none;
+
+    @include on-event {
+        @include boxshadow(none);
+    }
+}
+
+//styles for navbar-toggler
+.navbar-toggler {
+    margin: 12px 25px 12px auto;
+    padding: 10px 0;  
+    border: 0;
+    border-radius: 0;
+
+    .icon-bar {
+        display: block;
+        height: 4px;
+        width: 30px;
+        background: $brand-color;
+        @include boxshadow(none);
+        @include transition(0.5s cubic-bezier(0.65, 0.05, 0.36, 1));
+
+        &+.icon-bar {
+            margin-top: 6px;
+        }
+    }
+
+    &[aria-expanded="true"] {
+        .icon-bar {
+            &:first-child {
+                @include transform(rotate(225deg) translate(-9px, -5px));
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:last-child {
+                @include transform(rotate(-225deg) translate(-8px, 6px));
+            }
+        }
+    }
+
+    @include on-event() {
+        outline: 0;
+        box-shadow: none;
+    }
+}
+
+// container 
+.container {
+    @media (max-width: 767px) {
+        max-width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: initial;
+    bottom: initial;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    pointer-events: none;
+    transition: .3s cubic-bezier(0.65, 0.05, 0.36, 1) all;
+
+    &-black {    
+        background-color: #000;
+    }
+}
