@@ -77,8 +77,10 @@ var scrollTarget = () => {
     // top navigation - menu links
     $(".top-navigation .navbar-nav a").each(function() {
         var defaultHref = $(this).attr("href");
-        $(this).attr("href", "#");
         $(this).attr("data-href",defaultHref);
+        setTimeout(() => {
+            $(this).attr("href", "#");
+        }, 100);
 
         $(this).click(function(e) {
             e.preventDefault();
@@ -115,14 +117,6 @@ var scrollTarget = () => {
             }
         });
     });
-    // top navigation - mobile - toggle navbar-toggler when clicking on menu
-    if ($(window).width() < 992) {
-        $(".top-navigation .navbar-nav a").each(function() {
-            $(this).click(function() {
-                $(".top-navigation .navbar-toggler").click();
-            });
-        });
-    }
 
     // hero section - button
     if ($(".calming-spray .button-holder a").length) {
@@ -174,6 +168,19 @@ var scrollTarget = () => {
     }
 }
 
+// top navigation - mobile - toggle navbar-toggler when clicking on menu
+var navToggler = () => {
+    if ($(window).width() < 992) {
+        $(".top-navigation .navbar-toggler").addClass("collapsed").attr("aria-expanded", "false");
+        $(".top-navigation .navbar-collapse").removeClass("show").addClass("collapse");
+        $(".top-navigation .navbar-nav a").each(function() {
+            $(this).click(function() {
+                $(".top-navigation .navbar-toggler").click();
+            });
+        });
+    }
+}
+
 // accordion - open/show the first item
 var accordion = () => {
     if ($("#accordion_custom").length) {
@@ -188,17 +195,18 @@ windowScrolled();
   
 $(document).ready(function() {
     // customSlider();
+    scrollTarget();
+    navToggler();
     mainAutoPadding();
     footerFunctions();
 });
   
 $(window).resize(function() {
+    navToggler();
     mainAutoPadding();
-    scrollTarget();
 });
 
 $(window).on("load", function() {
-    scrollTarget();
     accordion();
     new WOW().init();
 });
