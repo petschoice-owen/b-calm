@@ -75,48 +75,61 @@ var footerFunctions = () => {
 // top-navigation - click to scroll to section
 var scrollTarget = () => {
     // top navigation - menu links
-    $(".top-navigation .navbar-nav a").each(function() {
-        var defaultHref = $(this).attr("href");
-        $(this).attr("data-href",defaultHref);
-        setTimeout(() => {
-            $(this).attr("href", "#");
-        }, 100);
+    if ($(".top-navigation .navbar-nav a").length) {
+        if ($("body").hasClass("home")) {
+            $(".top-navigation .navbar-nav a").each(function() {
+                var defaultHref = $(this).attr("href");
+                $(this).attr("data-href",defaultHref);
+                setTimeout(() => {
+                    $(this).attr("href", "#");
+                }, 100);
+        
+                $(this).click(function(e) {
+                    e.preventDefault();
+                    var navHref = $(this).attr("data-href");
+                    var windowSize = $(window).width();
+        
+                    // if (windowSize < 576) {
+                    //     console.log("screen width is less than 576");
+                    // }
+                    if (windowSize < 768) {
+                        $('html, body').animate({
+                            scrollTop: $(navHref).offset().top-68
+                        }, 'fast'); 
+                    }
+                    else if (windowSize < 992) {
+                        $('html, body').animate({
+                            scrollTop: $(navHref).offset().top-75
+                        }, 'fast'); 
+                    }
+                    else if (windowSize < 1200) {
+                        $('html, body').animate({
+                            scrollTop: $(navHref).offset().top-76
+                        }, 'fast'); 
+                    }
+                    // else if (windowSize < 1400) {
+                    //     $('html, body').animate({
+                    //         scrollTop: $(navHref).offset().top-146
+                    //     }, 'fast'); 
+                    // }
+                    else {
+                        $('html, body').animate({
+                            scrollTop: $(navHref).offset().top-80
+                        }, 'fast'); 
+                    }
+                });
+            });
+        }
 
-        $(this).click(function(e) {
-            e.preventDefault();
-            var navHref = $(this).attr("data-href");
-            var windowSize = $(window).width();
-
-            // if (windowSize < 576) {
-            //     console.log("screen width is less than 576");
-            // }
-            if (windowSize < 768) {
-                $('html, body').animate({
-                    scrollTop: $(navHref).offset().top-68
-                }, 'fast'); 
-            }
-            else if (windowSize < 992) {
-                $('html, body').animate({
-                    scrollTop: $(navHref).offset().top-75
-                }, 'fast'); 
-            }
-            else if (windowSize < 1200) {
-                $('html, body').animate({
-                    scrollTop: $(navHref).offset().top-76
-                }, 'fast'); 
-            }
-            // else if (windowSize < 1400) {
-            //     $('html, body').animate({
-            //         scrollTop: $(navHref).offset().top-146
-            //     }, 'fast'); 
-            // }
-            else {
-                $('html, body').animate({
-                    scrollTop: $(navHref).offset().top-80
-                }, 'fast'); 
-            }
-        });
-    });
+        else {
+            $(".top-navigation .navbar-nav a").each(function() {
+                var defaultHref = $(this).attr("href");
+                setTimeout(() => {
+                    $(this).attr("href" , "/" + defaultHref);
+                }, 100);
+            });
+        }
+    }
 
     // hero section - button
     if ($(".calming-spray .button-holder a").length) {

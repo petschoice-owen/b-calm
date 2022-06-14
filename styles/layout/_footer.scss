@@ -301,3 +301,19 @@
         }
     }
 }
+
+body:not(.home) .footer-section {
+    padding-top: 50px;
+
+    h1, .box-wrapper {
+        display: none;
+    }
+
+    .copyright {
+        margin-top: 0;
+    }
+
+    @media (max-width: 767px) {
+        padding-top: 30px;
+    }
+}
