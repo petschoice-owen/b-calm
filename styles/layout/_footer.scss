@@ -1,0 +1,328 @@
+//main: ../main.scss
+
+// ------------------------------------------------------------------------------------
+// This file contains all styles related to the footer section of the site/application.
+// ------------------------------------------------------------------------------------
+
+.footer-section {
+    overflow: hidden;
+    padding: 100px 0 20px;
+    background-color: #fcfcfc;
+  
+    .box-wrapper {
+        position: relative;
+        margin-top: 90px;
+
+        .wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 670px;
+            padding: 40px 65px;
+            border: 1px solid $secondary-color;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,.1);
+        }
+    }
+
+    .overlay-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        width: 670px;
+        height: 100%;
+        margin: auto;
+    }
+
+    .overlay-image {
+        position: absolute;
+
+        &-top {
+            top: -55px;
+        }
+
+        &-right {
+            right: -12%;
+        }
+
+        &-bottom {
+            bottom: -55px;
+        }
+
+        &-left {
+            left: -12%;
+        }
+    }
+
+    .image-wrapper {
+        margin-top: -77px;
+        margin-bottom: 10px;
+
+        img {
+            width: 100%;
+            max-width: 137px;
+            height: auto;
+        }
+    }
+
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+
+        &-full {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        &-half {
+            width: 100%;
+            max-width: 50%;
+        }
+
+        img {
+            max-height: 24px;
+        }
+
+        .icon-wrapper {
+            display: flex;
+            margin-right: 15px;
+        }
+
+        a {
+            color: $brand-color;
+
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+
+    .social {
+        display: flex;
+        margin-top: 45px;
+
+        a {
+            margin: 0 14px;
+        }
+
+        img {
+            width: auto;
+            height: 100%;
+            max-height: 40px;
+        }
+    }
+
+    .copyright {
+        margin-top: 90px;
+        padding-top: 10px;
+        text-align: center;
+        border-top: 2px solid $brand-color;
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+    .footer-links {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        margin-bottom: 5px;
+        padding: 0;
+
+        li {
+            position: relative;
+
+            &:not(:last-child) {
+                margin-right: 12px;
+                padding-right: 14px;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 2px;
+                    height: 100%;
+                    margin: auto;
+                    background-color: $brand-color;
+                }
+            }
+        }
+
+        a {
+            display: flex;
+            color: $brand-color;
+            font-size: 16px;
+
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+  
+    @media (max-width: 1199px) {
+        .box-wrapper .wrapper,
+        .overlay-wrapper {
+            width: 620px;
+        }
+
+        .overlay-image {
+            &-right {
+                right: -10%;
+            }
+
+            &-left {
+                left: -10%;
+            }
+        }
+    }
+
+    @media (max-width: 991px) {
+        padding-top: 80px;
+
+        .box-wrapper .wrapper,
+        .overlay-wrapper {
+            width: 570px;
+        }
+
+        .overlay-image {
+            max-width: 25%;
+            max-height: 45%;
+
+            &-top {
+                top: -45px;
+            }
+
+            &-right {
+                right: -9%;
+            }
+
+            &-bottom {
+                bottom: -45px;
+            }
+
+            &-left {
+                left: -9%;
+            }
+        }
+
+        .copyright p,
+        .footer-links a {
+            font-size: 14px;
+        }        
+    }
+
+    @media (max-width: 767px) {
+        padding-top: 60px;
+
+        .box-wrapper .wrapper,
+        .overlay-wrapper {
+            width: calc(100% - 50px);
+        }
+
+        .image-wrapper {
+            margin-top: -54px;
+
+            img {
+                max-width: 110px;
+            }
+        }
+
+        .box-wrapper {
+            margin-top: 60px;
+
+            .wrapper {
+                // padding: 25px 30px;
+                padding: 25px;
+            }
+        }
+
+        .overlay-image {
+            max-width: 40%;
+            max-height: 40%;
+        }
+
+        .item {
+            margin-top: 20px;
+
+            &-half {
+                // justify-content: center;
+                justify-content: flex-start;
+                max-width: 100%;
+            }
+        }
+
+        .social {
+            margin-top: 30px;
+        }
+
+        .footer-links {
+            flex-wrap: wrap;
+
+            li {
+                padding-top: 2px;
+                padding-bottom: 2px;
+
+                &:not(:last-child) {
+                    margin-right: 8px;
+                    padding-right: 10px;
+
+                    &::after {
+                        height: calc(100% - 6px);
+                    }
+                }
+            }
+
+            a {
+                font-size: 13px;
+            }
+        }
+
+        .copyright {
+            margin-top: 70px;
+
+            p {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+body:not(.home) .footer-section {
+    padding-top: 50px;
+
+    h1, .box-wrapper {
+        display: none;
+    }
+
+    .copyright {
+        margin-top: 0;
+    }
+
+    @media (max-width: 767px) {
+        padding-top: 30px;
+    }
+}
+
+#cmplz-manage-consent {
+    .cmplz-btn {
+        padding: 10px 20px !important;
+        font-size: 14px !important;
+        color: #fff !important;
+        background-color: #12483b !important;
+    }
+}

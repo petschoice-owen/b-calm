@@ -1,0 +1,174 @@
+//main: ../main.scss
+
+/**
+ * Basic typography style for copy text
+ */
+ 
+body {
+    color: $brand-color;
+    font: normal 125% / 1.4 $text-font-stack;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.4;
+    text-transform: none;
+}
+
+h1 {
+    // font-size: 42px;
+    font-size: 38px;
+}
+
+h2 {
+    // font-size: 38px;
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 32px;
+}
+
+h4 {
+    font-size: 26px;
+}
+
+h5 {
+    font-size: 22px;
+}
+
+h6 {
+    font-size: 20px;
+}
+
+p, ul, ol, li, label, input, textarea {
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+ul {
+    list-style: disc;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul, ol {
+    padding-left: 40px;
+}
+
+strong, b {
+    font-weight: 700;
+}
+
+em, i {
+    font-style: italic;
+}
+
+a {
+    color: $text-color;
+
+    &:hover {
+        color: #d5a940;
+        text-decoration: none;
+    }
+
+    @include on-event() {
+        text-decoration: none;
+    }
+}
+
+.medium-text {
+    font-size: 20px;
+    line-height: 1.4;
+
+    &-margin-top {
+        margin-top: 25px;
+    }
+}
+
+
+@media (max-width: 991px) {
+    h1 {
+        // font-size: 36px;
+        font-size: 34px;
+    }
+
+    h2 {
+        // font-size: 32px;
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 26px;
+    }
+
+    h4 {
+        font-size: 22px;
+    }
+
+    h5 {
+        font-size: 20px;
+    }
+
+    h6 {
+        font-size: 18px;
+    }
+
+    p, ul, ol, label, li, input, textarea {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .medium-text {
+        font-size: 20px;
+
+        &-margin-top {
+            margin-top: 15px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        // font-size: 29px;
+        font-size: 28px;
+    }
+
+    h2 {
+        // font-size: 27px;
+        font-size: 26px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    h6 {
+        font-size: 17px;
+    }
+
+    ul, ol {
+        padding-left: 30px;
+    }
+
+    p, ul, ol, li, label, input, textarea {
+        font-size: 15px;
+    }
+
+    .medium-text {
+        font-size: 16px;
+
+        &-margin-top {
+            margin-top: 10px;
+        }
+    }
+}

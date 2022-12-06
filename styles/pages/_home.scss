@@ -1,0 +1,663 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+.page-home {
+    display: flex;
+    flex-direction: column;
+    background-color: $brand-color;
+
+    .calming-spray {
+        position: relative;
+        overflow: hidden;
+        padding: 100px 0;
+        color: #fff;
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            opacity: .3;
+            max-height: 190px;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .image-wrapper,
+        .text-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 50%;
+        }
+
+        .image-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-right: 50px;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            right: 50px;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            margin: auto;
+            width: auto;
+            max-width: 320px;
+            height: auto;
+            max-height: 320px;
+        }
+
+        .featured {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 310px;
+            max-height: 318px;
+        }
+
+        .text-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .checklist {
+            margin-top: 10px;
+        }
+
+        .button-holder {
+            display: flex;
+            margin-top: 50px;
+        }
+    }
+
+    .section-alternate {
+        position: relative;
+        overflow: hidden;
+        padding: 120px 0;
+
+        .wrapper {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: .3;
+            max-width: 500px;
+        }
+
+        .image-wrapper,
+        .text-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 50%;
+        }
+
+        .image-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 50px;
+        }
+
+        .plain-image {
+            width: auto;
+            max-width: 500px;
+            height: auto;
+            max-height: 350px;
+        }
+
+        .text-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &-inverted {
+            .image-overlay {
+                left: initial;
+                right: 0;
+                opacity: .1;
+                max-width: unset;
+                max-height: 490px;
+            }
+
+            .text-wrapper {
+                order: 2;
+            }
+
+            .image-wrapper {
+                order: 1;
+            }
+        }
+    }
+
+    .is-it-safe {
+        padding-top: 80px;
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            max-width: 950px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .image-holder {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+
+            img {
+                width: auto;
+                height: auto;
+                max-height: 170px;
+            }
+        }
+    }
+
+    .faqs {
+        position: relative;
+        padding: 100px 0;
+        color: #fff;
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            opacity: .1;
+            max-height: 500px;
+        }
+
+        .wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            max-width: 950px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .accordion {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            max-width: 1030px;
+            margin: 50px auto auto;
+        }
+    }
+
+    .instructions {
+        position: relative;
+        padding: 100px 0;
+
+        .image-overlay {
+            position: absolute;
+            width: auto;
+            height: auto;
+            opacity: .8;
+
+            &-left {
+                top: 0;
+                left: 0;
+                max-width: 200px;
+                max-height: 260px;
+            }
+
+            &-right {
+                bottom: 0;
+                right: 0;
+                max-width: 200px;
+                max-height: 330px;
+            }
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .items {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 33.33%;
+            margin-top: 60px;
+
+            &-wrapper {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                max-width: 330px;
+                height: 100%;
+                padding: 0 25px;
+                text-align: center;
+            }
+
+            p {
+                margin-top: 20px;
+                line-height: 1.4;
+            }
+        }
+
+        .icon-wrapper {
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: auto;
+                height: auto;
+                max-height: 80px;
+            }
+        }
+    }
+
+    .treats {
+        padding: 100px 0;
+        overflow: hidden;
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: .1;
+            max-width: 565px;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 790px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .text-wrapper {
+            text-align: center;
+            
+        }
+
+        .image-checklist-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 15px;
+
+            img {
+                width: auto;
+                max-width: 250px;
+                height: auto;
+                max-height: 320px;
+            }
+
+            .image-wrapper {
+                max-width: 50%;
+                padding-right: 70px;
+            }
+
+            .checklist-wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                max-width: 50%;
+            }
+        }
+    }
+
+    @media (max-width: 1399px) {
+        .section-alternate {
+            .text-wrapper {
+                padding-right: 20px;
+            }
+
+            &-inverted {
+                .text-wrapper {
+                    padding-left: 20px;
+                    padding-right: 0;
+                }
+            }
+        }
+
+        .faqs .image-overlay {
+            max-height: 470px;
+        }
+
+        .instructions {
+            .image-overlay {    
+                &-left {
+                    max-width: 170px;
+                    max-height: 220px;
+                }
+    
+                &-right {
+                    max-width: 170px;
+                    max-height: 300px;
+                }
+            }
+        }
+    }
+  
+    @media (max-width: 1199px) {
+        .calming-spray {
+            .image-overlay {
+                max-height: 190px;
+            }
+
+            .image-wrapper {
+                max-width: 40%;
+                padding-right: 0;
+            }
+
+            .background {
+                right: 0;
+            }
+    
+            .text-wrapper {
+                max-width: 60%;
+                padding-left: 50px;
+            }
+        }
+
+        .section-alternate {
+            .image-overlay {
+                max-width: 500px;
+                max-height: 480px;
+            }
+
+            .text-wrapper {
+                padding-right: 0;
+            }
+
+            .image-wrapper {
+                padding-right: 0;
+            }
+
+            .plain-image {
+                max-width: 100%;
+            }
+
+            &-inverted {
+                .image-overlay {
+                    max-width: initial;
+                    max-height: 480px;
+                }
+
+                .text-wrapper {
+                    padding-left: 0;
+                }
+
+                .image-wrapper {
+                    padding-left: 0;
+                    padding-right: 50px;
+                }
+            }
+        }
+
+        .is-it-safe .wrapper {
+            max-width: 730px;
+        }
+
+        .faqs .image-overlay {
+            max-height: 450px;
+        }
+
+        .instructions {
+            .image-overlay {    
+                &-left {
+                    max-width: 140px;
+                    max-height: 180px;
+                }
+    
+                &-right {
+                    max-width: 130px;
+                    max-height: 230px;
+                }
+            }
+        }
+    }
+  
+    @media (max-width: 991px) {
+        .calming-spray {
+            padding: 80px 0;
+
+            .image-wrapper {
+                max-width: 100%;
+                margin: 50px 0 70px;
+            }
+
+            .text-wrapper {
+                max-width: 460px;
+                padding-left: 0;
+                margin: 0 auto 100px;
+            }
+        }
+
+        .section-alternate {
+            .image-overlay {
+                max-width: 400px;
+            }
+
+            .text-wrapper {
+                max-width: 100%;
+                margin-top: 70px;
+                padding-right: 0;
+                order: 2;
+            }
+
+            h1, h2 {
+                text-align: center;
+            }
+
+            .image-wrapper {
+                max-width: 450px;
+                margin: auto;
+                padding-left: 0;
+                order: 1;
+            }
+
+            &-inverted {
+                .image-overlay {
+                    max-height: 380px;
+                }
+
+                .text-wrapper {
+                    padding-left: 0;
+                    order: 2;
+                }
+
+                .image-wrapper {
+                    padding-right: 0;
+                    order: 1;
+                }
+            }
+        }
+
+        .is-it-safe {
+            .wrapper {
+                max-width: 650px;
+            }
+
+            .image-holder img {
+                max-height: 150px;
+            }
+        }
+
+        .faqs {
+            padding: 100px 0;
+
+            .image-overlay {
+                max-height: 420px;
+            }
+
+            .accordion {
+                margin-top: 40px;
+            }
+        }
+
+        .instructions {
+            .item {
+                max-width: 50%;
+
+                &-wrapper {
+                    max-width: 300px;
+                }
+            }
+        }
+    }
+  
+    @media (max-width: 767px) {
+        .calming-spray {
+            padding: 70px 0 50px;
+
+            .image-overlay {
+                height: 42vw;
+                max-height: 200px;
+            }
+
+            .image-wrapper {
+                margin: 0 0 40px;
+            }
+
+            .background {
+                max-width: 310px;
+            }
+
+            .featured {
+                max-width: 300px;
+            }
+
+            .text-wrapper {
+                max-width: 360px;
+            }
+
+            .button-holder {
+                margin-top: 35px;
+            }
+        }
+
+        .section-alternate {
+            padding: 80px 0;
+
+            .image-overlay {
+                max-height: 300px;
+            }
+
+            .plain-image {
+                max-width: 300px;
+            }
+
+            .text-wrapper {
+                margin-top: 50px;
+            }
+        }
+
+        .is-it-safe {
+            .wrapper {
+                max-width: 100%;
+            }
+
+            .image-holder {
+                margin-top: 30px;
+
+                img {
+                    max-height: 100px;
+                }
+            }
+        }
+
+        .faqs {
+            padding: 80px 0;
+
+            .image-overlay {
+                max-height: 300px;
+            }
+
+            .accordion {
+                margin-top: 30px;
+            }
+        }
+
+        .instructions {
+            padding: 80px 0;
+
+            .image-overlay {  
+                opacity: .5;
+
+                &-left {
+                    max-width: 110px;
+                    max-height: 140px;
+                }
+    
+                &-right {
+                    max-width: 100px;
+                    max-height: 180px;
+                }
+            }
+
+            .items {
+                margin-top: 0;
+            }
+
+            .item {
+                margin-top: 40px;
+
+                p {
+                    margin-top: 20px;
+                }
+            }
+
+            .icon-wrapper img {
+                max-height: 70px;
+            }
+        }
+
+        .treats {
+            padding: 80px 0;
+            
+            .image-checklist-wrapper {
+                flex-direction: column;
+                margin-bottom: 10px;
+
+                .image-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    max-width: 350px;
+                    margin: auto;
+                    padding: 0;
+                }
+
+                .checklist-wrapper {
+                    max-width: 300px;
+                    margin: 30px auto 0;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 575px) {
+        .instructions .item {
+            max-width: 100%;
+        }
+    }
+}
