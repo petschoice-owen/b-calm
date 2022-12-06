@@ -170,3 +170,46 @@ if ( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'general-settings',
 	));
 }
+
+
+/*-----------------------------------------------------------------------------------*/
+/* WooCoomerce Shop Page
+/*-----------------------------------------------------------------------------------*/
+add_theme_support( 'woocommerce' );
+
+
+/*-----------------------------------------------------------------------------------*/
+/* WooCoomerce - Cart Menu Item
+/*-----------------------------------------------------------------------------------*/
+function woo_cart_but() {
+	ob_start();
+	$cart_count = WC()->cart->cart_contents_count; // Set variable for cart item count
+	$cart_url = wc_get_cart_url();  // Set Cart URL ?>
+
+	<a class="menu-item cart-contents cart" href="<?php echo $cart_url; ?>" title="My Basket">
+		<?php if ( $cart_count > 0 ) { ?>
+			<span class="cart-contents-count"><?php echo $cart_count; ?></span>
+		<?php } ?>
+	</a>
+	<?php  
+    return ob_get_clean();
+}
+add_shortcode ('woo_cart_but','woo_cart_but');
+
+// Add AJAX Shortcode when cart contents update
+add_filter( 'woocommerce_add_to_cart_fragments', 'woo_cart_but_count' );
+function woo_cart_but_count( $fragments ) {
+    ob_start();
+    
+    $cart_count = WC()->cart->cart_contents_count;
+    $cart_url = wc_get_cart_url(); ?>
+
+    <a class="cart-contents menu-item cart" href="<?php echo $cart_url; ?>" title="Cart">
+		<?php if ( $cart_count > 0 ) { ?>
+			<span class="cart-contents-count"><?php echo $cart_count; ?></span>
+		<?php } ?>
+	</a>
+    <?php
+    $fragments['a.cart-contents'] = ob_get_clean();
+    return $fragments;
+}

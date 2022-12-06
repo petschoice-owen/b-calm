@@ -53,7 +53,8 @@
     .menu-item {
         position: relative;
         // padding: 20px;
-        padding: 20px 23px;
+        // padding: 20px 23px;
+        padding: 10px 23px;
     
         &:not(.menu-dropdown) {
             a {
@@ -95,6 +96,10 @@
   
     .navbar {
         transition: .35s ease-in-out all;
+
+        .container {
+            position: relative;
+        }
         
         .navbar-nav {
             margin-left: auto;
@@ -182,6 +187,66 @@
             }
         }
     }
+
+    .account { 
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 5;
+        display: flex;
+        transition: .35s ease-in-out all;
+
+        .holder {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & + .holder {
+                margin-left: 12px;
+            }
+        }
+        
+        img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: auto;
+            height: 25px;
+            margin: auto;
+            pointer-events: none;
+        }
+
+        a {
+            position: relative;
+            display: flex;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+
+            span {
+                position: absolute;
+                top: -12px;
+                right: -10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 22px;
+                height: 22px;
+                font-size: 10px;
+                line-height: 10px;
+                color: #fff;
+                background-color: $secondary-color;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .navbar-nav-account {
+        padding-top: 30px;
+    }
   
     @media (max-width: 1199px) {
         .navbar {
@@ -223,6 +288,15 @@
             // padding: 12px 20px;
             padding: 12px 16px;
         }
+
+        .account {
+            top: 15px;
+            right: 25px;
+
+            a span {
+                top: -12px;
+            }
+        }
     }
   
     @media (max-width: 991px) {
@@ -254,6 +328,15 @@
 
         .menu-item {
             padding: 8px 0;
+        }
+
+        .account {
+            top: 47px;
+            right: 80px;
+
+            .holder + .holder {
+                margin-left: 15px;
+            }
         }
     }
   
@@ -340,6 +423,10 @@
             max-width: 60px;
             max-height: 60px;
         }
+
+        .account {
+            top: 32px;
+        }
     }
 }
 
@@ -355,6 +442,10 @@
     .logo-image {
         max-width: 70px;
         max-height: 70px;
+    }
+
+    .account {
+        top: 10px;
     }
 
     @media (max-width: 1199px) {
@@ -373,6 +464,10 @@
         .logo-link {
             margin: 10px 15px;
         }
+
+        .account {
+            top: 25px
+        }
     }
 
     @media (max-width: 767px) {
@@ -384,5 +479,24 @@
         .logo-link {
             margin: 5px 15px;
         }
+
+        .account {
+            top: 21px
+        }
+    }
+}
+
+
+.admin-bar .top-navigation {
+    top: 32px;
+
+    @media (max-width: 782px) {
+        top: 46px;
+    }
+}
+
+.admin-bar .top-navigation.scrolled {
+    @media (max-width: 600px) {
+        top: 0;
     }
 }
