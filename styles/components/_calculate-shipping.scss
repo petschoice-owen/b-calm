@@ -1,0 +1,72 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the calculate shipping component.
+// -----------------------------------------------------------------------------
+
+.woocommerce .cart_totals .woocommerce-shipping-calculator .shipping-calculator-button {
+    padding: 8px 15px;
+    margin: 10px 0 5px;
+    font-family: $font-urbane-light;
+    font-size: 14px;
+    line-height: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: $brand-color;
+    border-radius: 4px;
+    transition: all .35s ease-in-out;
+
+    &::after {
+        display: none;
+    }
+
+    &:hover {
+        background-color: $secondary-color;
+    }
+
+    & + .shipping-calculator-form {
+        margin: 10px 0 0;
+        padding: 0 !important;
+
+        .form-row,
+        #calc_shipping_postcode_field + p {
+            padding: 0;
+        }
+
+        .select2 {
+            padding: 0 !important;
+            line-height: 4px;
+        }
+
+        p.form-row {
+            margin-bottom: 10px;
+        }
+
+        .input-text {
+            height: 40px;
+            padding: 7px 8px;
+            font-size: 18px;
+            line-height: 24px;
+            color: $text-color;
+            border: 1px solid #c9c9c9;
+            border-radius: 0;
+        }
+
+        ::-webkit-input-placeholder {
+            color: $text-color;
+        }
+          
+        :-ms-input-placeholder {
+            color: $text-color;
+        }
+          
+        ::placeholder {
+            color: $text-color;
+        }
+    }
+
+    @media (max-width: 991px) {
+        font-size: 12px;
+    }
+}

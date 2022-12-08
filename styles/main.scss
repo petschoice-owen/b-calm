@@ -24,7 +24,10 @@
 @import
     'components/buttons',
     'components/checklist',
-    'components/accordion';
+    'components/accordion',
+    'components/calculate-shipping',
+    'components/country-select',
+    'components/product-quantity';
 
 // 5. Layout-related sections
 @import
@@ -34,4 +37,11 @@
 // 6. Page-specific styles
 @import
     'pages/home',
-    'pages/default';
+    'pages/default',
+    'pages/shop',
+    'pages/single-product',
+    'pages/cart',
+    'pages/my-account',
+    'pages/order-received',
+    'pages/shop',
+    'pages/single';

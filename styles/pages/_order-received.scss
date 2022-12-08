@@ -1,0 +1,164 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the order received page.
+// -----------------------------------------------------------------------------
+
+.woocommerce-checkout.woocommerce-order-received .page-default {
+    .woocommerce {
+        .woocommerce-thankyou-order-received,
+        h2 {
+            font-family: $font-urbane-light;
+            font-size: 28px;
+            color: $text-color;
+            text-transform: uppercase;
+        }
+
+        .woocommerce-order-overview {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            margin-top: 20px;
+            background: #fff;
+
+            li {
+                width: 33.33%;
+                padding: 0;
+                margin: 0 0 15px;
+                font-size: 16px;
+                line-height: 18px;
+                border: 0;
+
+                * {
+                    margin-top: 3px;
+                    font-family: $font-urbane-light;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: $brand-color;
+                }
+            }
+        }
+
+        .woocommerce-order-details {
+            margin: 20px 0 0;
+            padding-top: 10px;
+
+            table * + * {
+                padding: 9px 12px;
+            }
+        }
+
+        table.shop_table {
+            margin-top: 20px;
+            padding-top: 0;
+            border-radius: 0;
+
+            tr, th, td, p, label {
+                font-size: 18px;
+                line-height: 1.1;
+            }
+
+            .product-name a {
+                text-decoration: none;
+                color: $brand-color;
+                // color: $secondary-color;
+                text-decoration: underline;
+
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+
+            tfoot tr:last-child .woocommerce-Price-amount.amount {
+                font-family: $font-urbane-light;
+            }
+        }
+
+        .order_details {
+            .wc-item-meta {
+                display: none;
+            }
+        }
+
+        .woocommerce-customer-details {
+            margin: 30px 0 0;
+
+            address {
+                padding: 12px;
+                margin-top: 20px;
+                font-size: 18px;
+                line-height: 24px;
+                border-radius: 0;
+
+                p {
+                    padding: 0;
+                    font-size: 18px;
+                    line-height: 24px;
+
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 991px) {
+            table.shop_table th,
+            table.shop_table td {
+                vertical-align: middle;
+            }
+
+            .woocommerce-thankyou-order-received,
+            h2 {
+                font-size: 26px;
+                line-height: 1;
+            }
+
+            .woocommerce-order-overview li {
+                width: 50%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            table.shop_table {
+                th, td {
+                    width: 50%;
+                }
+            }
+        }
+
+        @media (max-width: 767px) {
+            .woocommerce-order-overview li {
+                width: 100%;
+            }
+
+            .woocommerce-thankyou-order-received,
+            h2 {
+                font-size: 24px;
+            }
+
+            .woocommerce-order-overview {
+                margin-top: 15px;
+            }
+
+            table.shop_table {
+                margin-top: 15px;
+
+                tr, th, td, p, label {
+                    font-size: 16px;
+                }
+            }
+
+            .woocommerce-customer-details address {
+                margin-top: 15px;
+                font-size: 16px;
+                line-height: 22px;
+
+                p {
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+}

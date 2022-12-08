@@ -128,3 +128,28 @@ input[type="text"] {
         background-color: #000;
     }
 }
+
+// from style.css
+.image-coming-soon {
+	position: relative;
+}
+.image-coming-soon::before {
+    content: "Coming Soon";
+    position: absolute;
+    left: -30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    padding: 20px;
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: center;
+    color: #fff;
+    background-color: #12483b;
+    border-radius: 50%;
+}
+.image-coming-soon-top::before {
+    top: -10px;
+}

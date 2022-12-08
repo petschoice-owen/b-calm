@@ -11,6 +11,7 @@
     align-items: center;
     width: fit-content;
     padding: 10px 15px;
+    font-weight: 400;
     font-size: 16px;
     text-transform: uppercase;
     text-align: center;
@@ -24,6 +25,72 @@
         color: $brand-color;
         text-decoration: none;
         background-color: $secondary-color;    
+    }
+
+    @media (max-width: 991px) {
+        font-size: 15px;
+    }
+
+    @media (max-width: 767px) {
+        font-size: 14px;
+    }
+}
+
+.btn-gold-solid {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 10px 15px;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    background-color: $secondary-color;
+    border-radius: 0;
+    border: 2px solid $secondary-color;
+    transition: .35s ease-in-out all;
+    
+    @include on-event {
+        color: #fff;
+        text-decoration: none;
+        background-color: $brand-color; 
+        border: 2px solid $brand-color;   
+    }
+
+    @media (max-width: 991px) {
+        font-size: 15px;
+    }
+
+    @media (max-width: 767px) {
+        font-size: 14px;
+    }
+}
+
+.btn-green-outline {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 10px 15px;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    color: $brand-color;
+    background-color: transparent;
+    border-radius: 0;
+    border: 2px solid $brand-color;
+    transition: .35s ease-in-out all;
+    
+    @include on-event {
+        color: #fff;
+        text-decoration: none;
+        background-color: $brand-color;  
+        border: 2px solid $brand-color;  
     }
 
     @media (max-width: 991px) {

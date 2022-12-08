@@ -1,0 +1,77 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the single page.
+// -----------------------------------------------------------------------------
+
+.page-single {
+    .single-post-content {
+        .featured-image {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 30px;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .date {
+            padding-bottom: 10px;
+            font-size: 15px;
+            color: $brand-color;
+        }
+
+        .title {
+            padding-bottom: 15px;
+            font-size: 30px;
+            font-weight: 600;
+            color: $brand-color;
+        }
+    }
+
+    .article-content {
+        * + * {
+            margin-top: 15px;
+        }
+
+        a {
+            font-family: $font-urbane-light;
+            color: $brand-color;
+
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+  
+    @media (max-width: 1199px) {
+        .single-page {
+            .title {
+                font-size: 28px;
+            }
+
+            .date {
+                font-size: 14px;
+            }
+        }
+    }
+  
+    @media (max-width: 767px) {
+        .single-page {
+            padding: 35px 0;
+
+            .featured-image {
+                padding-bottom: 20px;
+            }
+
+            .date {
+                font-size: 12px;
+            }
+
+            .title {
+                font-size: 22px;
+            }
+        }
+    }
+}

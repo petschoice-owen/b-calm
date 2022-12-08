@@ -1,0 +1,107 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the product quantity component.
+// -----------------------------------------------------------------------------
+
+.quantity {
+    .input-group {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    a {
+        color: $text-color;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .qty-input {
+        // width: 57px;
+        // height: 34px;
+        width: 80px;
+        height: 42px;
+        font-family: $font-urbane-light;
+        font-size: 18px;
+        color: $text-color;
+        text-align: center;
+        border: 2px solid $brand-color;
+    }
+
+    .qty-btn {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // width: 35px;
+        // height: 34px;
+        width: 51px;
+        height: 42px;
+        padding: 8px;
+        font-size: 18px;
+        text-align: center;
+        border: 2px solid $brand-color;
+    }
+
+    .decrement-btn {
+        border-right: 0;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 12px;
+            height: 2px;
+            margin: auto;
+            background-color: $text-color;
+        }
+    }
+
+    .increment-btn {
+        border-left: 0;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 2px;
+            margin: auto;
+            background-color: $text-color;
+        }
+
+        &:before {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        &:after {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transform: rotate(90deg);
+        }
+    }
+
+    // @media (max-width: 767px) {
+    //     .qty-input {
+    //         width: 42px;
+    //         height: 31px;
+    //     }
+
+    //     .qty-btn {
+    //         height: 31px;
+    //     }
+    // }
+}

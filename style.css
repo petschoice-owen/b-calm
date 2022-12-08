@@ -1,37 +1,11 @@
 /*
 Theme Name:     B-Calm
-Theme URI:      https://www.b-calmcbd.co.uk/
+Theme URI:      https://www.b-calmcbd.co.uk
 Author:         Pets Choice Ltd
-Author URI:     https://www.petschoice.co.uk/
+Author URI:     https://www.petschoice.co.uk
 Description:    A Custom WordPress theme especially designed for B-Calm.
 Version:        1.0
 License:        GNU General Public License v3 or later
 License URI:    https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain:    b-calm
 */
-
-.image-coming-soon {
-	position: relative;
-}
-
-.image-coming-soon::before {
-    content: "Coming Soon";
-    position: absolute;
-    left: -30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 70px;
-    height: 70px;
-    padding: 20px;
-    font-size: 12px;
-    line-height: 1.2;
-    text-align: center;
-    color: #fff;
-    background-color: #12483b;
-    border-radius: 50%;
-}
-
-.image-coming-soon-top::before {
-    top: -10px;
-}
