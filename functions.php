@@ -213,3 +213,49 @@ function woo_cart_but_count( $fragments ) {
     $fragments['a.cart-contents'] = ob_get_clean();
     return $fragments;
 }
+
+
+/*-----------------------------------------------------------------------------------*/
+/* WooCommerce - Remove/Add elements on WooCommerce
+/*-----------------------------------------------------------------------------------*/
+function remove_woocommerce_elements() {
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 ); 					// Remove WooCommerce breadcrumbs
+	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 ); 						// Remove Result Count - before shop loop
+	remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count', 20 );							// Remove Result Count - after shop loop
+	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );			// Remove Product Meta - Single Product Page
+	// remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 ); 	// Remove Price Range of products in the loop
+	// remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );		// Remove Price - Single Product Page
+}
+add_action( 'after_setup_theme', 'remove_woocommerce_elements' );
+
+function woo_remove_product_tabs( $tabs ) {
+    unset( $tabs['description'] );																			// Remove the description tab
+    unset( $tabs['reviews'] ); 																				// Remove the reviews tab
+    unset( $tabs['additional_information'] );																// Remove the additional information tab
+    return $tabs;
+}
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+
+function remove_gallery_thumbnail_images() {
+	if ( is_product() ) {
+		remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );		// Remove product thumbnails - Single Product Page
+	}
+}
+add_action('loop_start', 'remove_gallery_thumbnail_images');
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Hide shipping rates when free shipping is available.
+/* Updated to support WooCommerce 2.6 Shipping Zones.
+/*-----------------------------------------------------------------------------------*/
+function my_hide_shipping_when_free_is_available( $rates ) {
+	$free = array();
+	foreach ( $rates as $rate_id => $rate ) {
+		if ( 'free_shipping' === $rate->method_id ) {
+			$free[ $rate_id ] = $rate;
+			break;
+		}
+	}
+	return ! empty( $free ) ? $free : $rates;
+}
+add_filter( 'woocommerce_package_rates', 'my_hide_shipping_when_free_is_available', 100 );

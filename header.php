@@ -8,12 +8,6 @@
     <meta name="author" content="Pets Choice" />
     <meta name="format-detection" content="telephone=no" />
     <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png">
-    <title>
-        <?php if (is_front_page()) {
-            bloginfo('name'); ?> | <?php bloginfo('description');
-        } else {
-            wp_title(''); ?> | <?php bloginfo('name');
-        } ?>
-    </title>
+    <title><?php if (is_front_page()) { bloginfo('name'); ?> | <?php bloginfo('description'); } else { wp_title(''); ?> <?php } ?></title>
     <?php wp_head(); ?>
 </head>

@@ -101,3 +101,36 @@
         font-size: 14px;
     }
 }
+
+.btn-green-solid {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 10px 15px;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    background-color: $brand-color;
+    border-radius: 0;
+    border: 2px solid $brand-color;
+    transition: .35s ease-in-out all;
+    
+    @include on-event {
+        color: #fff;
+        text-decoration: none;
+        background-color: $secondary-color; 
+        border: 2px solid $secondary-color;   
+    }
+
+    @media (max-width: 991px) {
+        font-size: 15px;
+    }
+
+    @media (max-width: 767px) {
+        font-size: 14px;
+    }
+}

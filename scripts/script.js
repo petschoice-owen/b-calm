@@ -43,6 +43,7 @@ var mainAutoPadding = () => {
         var topNavHeight = $(".top-navigation").height();
     
         $(".top-navigation + main").css("padding-top", topNavHeight+"px");
+        $(".top-navigation + #primary").css("padding-top", topNavHeight+"px");
         
         // var footerHeight = $(".footer-section").outerHeight();
         // var heroHeight = topNavHeight + footerHeight;
@@ -209,7 +210,6 @@ $(document).ready(function() {
     // customSlider();
     scrollTarget();
     navToggler();
-    mainAutoPadding();
     footerFunctions();
 });
   
@@ -219,6 +219,7 @@ $(window).resize(function() {
 });
 
 $(window).on("load", function() {
+    mainAutoPadding();
     accordion();
     new WOW().init();
 });
