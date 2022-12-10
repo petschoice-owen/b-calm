@@ -39,24 +39,28 @@ $wrapper_classes   = apply_filters(
 
 <div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
 	<div class="product-image-wrapper">
-		<figure class="woocommerce-product-gallery__wrapper">
-			<?php
-			if ( $post_thumbnail_id ) {
-				$html = wc_get_gallery_image_html( $post_thumbnail_id, true );
-			} else {
-				$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
-				$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
-				$html .= '</div>';
-			}
+		<?php if ( is_product() ) { ?>
+			<figure class="woocommerce-product-gallery__wrapper product-featured">
+				<?php
+				if ( $post_thumbnail_id ) {
+					$html = wc_get_gallery_image_html( $post_thumbnail_id, true );
+				} else {
+					$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
+					$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
+					$html .= '</div>';
+				}
 
-			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
-
-			do_action( 'woocommerce_product_thumbnails' );
-			?>
-		</figure>
-		<?php
-		if ( is_product() ) { ?>
-			<div class="product-icons">
+				echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
+				?>
+				<a href="#" class="product-nav product-nav-left"></a>
+				<a href="#" class="product-nav product-nav-right"></a>
+			</figure>
+			<div class="product-thumbnails">
+				<?php
+					do_action( 'woocommerce_product_thumbnails' );
+				?>
+			</div>
+			<!-- <div class="product-icons">
 				<?php 
 					if( get_field('product_icon_fresh_meat') == 'show' ) { ?>
 						<div class="icon-holder fresh-meat">
@@ -78,9 +82,25 @@ $wrapper_classes   = apply_filters(
 						</div>
 					<?php }
 				?>
-			</div>
-		<?php }
-		?>
+			</div> -->
+		<?php } 
+		else { ?>
+			<figure class="woocommerce-product-gallery__wrapper">
+				<?php
+				if ( $post_thumbnail_id ) {
+					$html = wc_get_gallery_image_html( $post_thumbnail_id, true );
+				} else {
+					$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
+					$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
+					$html .= '</div>';
+				}
+
+				echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
+
+				do_action( 'woocommerce_product_thumbnails' );
+				?>
+			</figure>
+		<?php } ?>
 	</div>
 </div>
 

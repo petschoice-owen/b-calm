@@ -71,7 +71,7 @@ function theme_scripts()  {
 	wp_enqueue_script('jquery', get_template_directory_uri() . '/scripts/vendors/jquery.min.js');
 	wp_enqueue_script('popper', get_template_directory_uri() . '/scripts/vendors/popper.min.js');
 	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/scripts/vendors/bootstrap.min.js');
-	// wp_enqueue_script('slick', get_template_directory_uri() . '/scripts/vendors/slick.min.js');
+	wp_enqueue_script('slick', get_template_directory_uri() . '/scripts/vendors/slick.min.js');
 	// wp_enqueue_script('masonry', get_template_directory_uri() . '/scripts/vendors/masonry.pkgd.min.js');
 	wp_enqueue_script('wow', get_template_directory_uri() . '/scripts/vendors/wow.min.js');
 	wp_enqueue_script('custom-script', get_template_directory_uri() . '/scripts/script.js');
@@ -236,12 +236,12 @@ function woo_remove_product_tabs( $tabs ) {
 }
 add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 
-function remove_gallery_thumbnail_images() {
-	if ( is_product() ) {
-		remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );		// Remove product thumbnails - Single Product Page
-	}
-}
-add_action('loop_start', 'remove_gallery_thumbnail_images');
+// function remove_gallery_thumbnail_images() {
+// 	if ( is_product() ) {
+// 		remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );		// Remove product thumbnails - Single Product Page
+// 	}
+// }
+// add_action('loop_start', 'remove_gallery_thumbnail_images');
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -259,3 +259,15 @@ function my_hide_shipping_when_free_is_available( $rates ) {
 	return ! empty( $free ) ? $free : $rates;
 }
 add_filter( 'woocommerce_package_rates', 'my_hide_shipping_when_free_is_available', 100 );
+
+
+/*-----------------------------------------------------------------------------------*/
+/* WooCommerce - Remove "Choose an option" in dropdown menus
+/*-----------------------------------------------------------------------------------*/
+add_filter( 'woocommerce_dropdown_variation_attribute_options_html', 'filter_dropdown_option_html', 12, 2 );
+function filter_dropdown_option_html( $html, $args ) {
+	$show_option_none_text = $args['show_option_none'] ? $args['show_option_none'] : __( 'Choose an option', 'woocommerce' );
+	$show_option_none_html = '<option value="">' . esc_html( $show_option_none_text ) . '</option>';
+	$html = str_replace($show_option_none_html, '', $html);
+	return $html;
+}

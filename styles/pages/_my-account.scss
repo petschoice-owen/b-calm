@@ -9,13 +9,6 @@
         display: flex;
         flex-wrap: wrap;
 
-        // .woocommerce-MyAccount-navigation {
-        //     li,
-        //     a {
-        //         margin-bottom: initial;
-        //     }
-        // }
-
         .woocommerce-notices-wrapper {
             width: 100%;
         }
@@ -30,8 +23,8 @@
         .woocommerce-message,
         .woocommerce-info,
         .woocommerce-error {
-            // @extend .container;
-            // @extend .container-narrow;
+            @extend .container;
+            @extend .container-narrow;
             width: 100%;
             padding: 15px 15px 15px 40px;
             margin: 0 auto;

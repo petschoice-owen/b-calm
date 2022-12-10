@@ -67,6 +67,7 @@
 
             .price {
                 // margin: 10px auto 15px;
+                display: flex;
                 margin: 0 auto;
                 padding: 10px 0 15px;
                 font-family: $font-urbane-light;
@@ -79,14 +80,19 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    padding: 0 5px;
+
+                    // &::before {
+                    //     content: "Price:";
+                    //     position: relative;
+                    //     padding-right: 5px;
+                    //     font-size: 16px;
+                    //     font-family: $font-urbane-light;
+                    //     color: $brand-color;
+                    // }
 
                     &::before {
-                        content: "Price:";
-                        position: relative;
-                        padding-right: 5px;
-                        font-size: 16px;
-                        font-family: $font-urbane-light;
-                        color: $brand-color;
+                        display: none;
                     }
                 }
             }
