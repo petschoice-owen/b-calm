@@ -271,3 +271,21 @@ function filter_dropdown_option_html( $html, $args ) {
 	$html = str_replace($show_option_none_html, '', $html);
 	return $html;
 }
+
+
+/*-----------------------------------------------------------------------------------*/
+/* WooCommerce Shop - Change "Shop" link to "Product Page"
+/*-----------------------------------------------------------------------------------*/
+// function custom_shop_page_redirect() {
+//     if( is_shop() ){
+// 		wp_redirect( home_url( '/shop/b-calm-product-name' ) );												//Enter the slug of the desired product page
+//         exit();
+//     }
+// }
+// add_action( 'template_redirect', 'custom_shop_page_redirect' );
+
+add_filter( 'woocommerce_return_to_shop_redirect', 'custom_empty_cart_redirect_url' );
+function custom_empty_cart_redirect_url(){
+	// return 'http://yoursite.com/page-example';
+	return home_url( '/shop/b-calm-product-name' );	
+}

@@ -33,5 +33,5 @@ if ( ! $short_description ) {
 </div> -->
 
 <div class="woocommerce-product-details__short-description woocommerce-product-details__the-content">
-	<p><?php echo get_post_field('post_content', $post->ID); ?></p>
+	<?php echo get_post_field('post_content', $post->ID); ?>
 </div>

@@ -59,11 +59,21 @@
                 text-align: center;
                 text-transform: uppercase;
                 background-color: $secondary-color;
+                border-radius: 0;
 
                 &:hover {
                     background-color: $brand-color;
                 }
             }
+        }
+
+        .woocommerce-message + .cart-empty {
+            border-top: 5px solid #fcfcfc;
+        }
+
+        .woocommerce-message .restore-item {
+            margin-left: auto;
+            margin-bottom: auto;
         }
     }
 
@@ -281,6 +291,19 @@
     }
 
     @media (max-width: 767px) {
+        .content {
+            .woocommerce-message {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                .restore-item {
+                    margin-top: 10px;
+                    margin-left: 0;
+                }
+            }
+        }
+
         h2 {
             font-size: 24px;
         }

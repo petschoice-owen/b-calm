@@ -77,6 +77,14 @@
         .button-holder {
             display: flex;
             margin-top: 50px;
+
+            a {
+                min-width: 160px;
+
+                & + a {
+                    margin-left: 5px;
+                }
+            }
         }
     }
 
@@ -553,6 +561,10 @@
 
             .button-holder {
                 margin-top: 35px;
+
+                a {
+                    min-width: 142px;
+                }
             }
         }
 
@@ -652,6 +664,12 @@
                     margin: 30px auto 0;
                 }
             }
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 767px) {
+        .calming-spray .image-overlay {
+            bottom: -30px;
         }
     }
 

@@ -29,9 +29,12 @@
                         <?php if( have_rows('button_hero') ): ?>
                             <div class="button-holder">
                                 <?php while( have_rows('button_hero') ) : the_row();
-                                    $button_text = get_sub_field('button_text', 'option');
-                                    $button_link = get_sub_field('button_link', 'option'); ?>
-                                    <a href="#<?php echo $button_link; ?>" class="btn-gold-outline"><?php echo $button_text; ?></a>
+                                    $button_1_text = get_sub_field('button_1_text', 'option');
+                                    $button_1_link = get_sub_field('button_1_link', 'option');
+                                    $button_2_text = get_sub_field('button_2_text', 'option');
+                                    $button_2_link = get_sub_field('button_2_link', 'option'); ?>
+                                    <a href="<?php echo $button_1_link; ?>" class="btn-gold-outline how-it-works"><?php echo $button_1_text; ?></a>
+                                    <a href="<?php echo $button_2_link; ?>" class="btn-gold-solid-outline shop"><?php echo $button_2_text; ?></a>
                                 <?php endwhile; ?>
                             </div>
                             <?php else :

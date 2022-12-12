@@ -132,8 +132,8 @@ var scrollTarget = () => {
     }
 
     // hero section - button
-    if ($(".calming-spray .button-holder a").length) {
-        var heroButton = $(".calming-spray .button-holder a");
+    if ($(".calming-spray .button-holder .how-it-works").length) {
+        var heroButton = $(".calming-spray .button-holder .how-it-works");
         var heroButtonHref = heroButton.attr("href");
         heroButton.attr("href","#"); 
         heroButton.attr("data-href",heroButtonHref);

@@ -69,6 +69,39 @@
     }
 }
 
+.btn-gold-solid-outline {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 10px 15px;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    color: $brand-color;
+    background-color: $secondary-color;
+    border-radius: 0;
+    border: 2px solid $secondary-color;
+    transition: .35s ease-in-out all;
+    
+    @include on-event {
+        color: $secondary-color;
+        text-decoration: none;
+        background-color: transparent; 
+        border: 2px solid $secondary-color;
+    }
+
+    @media (max-width: 991px) {
+        font-size: 15px;
+    }
+
+    @media (max-width: 767px) {
+        font-size: 14px;
+    }
+}
+
 .btn-green-outline {
     position: relative;
     display: flex;

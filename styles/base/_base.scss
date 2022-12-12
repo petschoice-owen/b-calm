@@ -178,3 +178,7 @@ input[type="text"] {
 .woocommerce-message:before {
     color: $brand-color;
 }
+// woocommerce info (green)
+.woocommerce-info::before {
+    color: $brand-color;
+}
