@@ -12,10 +12,20 @@
 
         .wrapper {
             .woocommerce {
+                margin-bottom: 0;
+
+                // .woocommerce-cart-form *:empty {
+                //     display: none;
+                // }
+                
                 .woocommerce-cart-form,
                 .cart-collaterals,
                 .wc-proceed-to-checkout {
                     padding: 0;
+                }
+
+                .wc-proceed-to-checkout {
+                    margin-bottom: 0;
                 }
 
                 .wc-proceed-to-checkout a {
@@ -26,6 +36,10 @@
 
         .woocommerce-notices-wrapper {
             background-color: #f7f6f7;
+
+            &:empty {
+                display: none;
+            }
         }
 
         .woocommerce-message,
@@ -53,16 +67,17 @@
                 margin-left: 15px;
                 white-space: nowrap;
                 font-family: $font-urbane-light;
-                letter-spacing: .2px;
+                font-weight: 400;
+                letter-spacing: 0;
                 font-size: 14px;
                 color: #fff;
                 text-align: center;
                 text-transform: uppercase;
-                background-color: $secondary-color;
+                background-color: $brand-color;
                 border-radius: 0;
 
                 &:hover {
-                    background-color: $brand-color;
+                    background-color: $secondary-color;
                 }
             }
         }
@@ -78,7 +93,7 @@
     }
 
     li, p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     h2 {
@@ -87,22 +102,31 @@
         text-transform: uppercase;
     }
 
+    form {
+        * {
+            margin-bottom: initial;
+        }
+    }
+
     .shop_table {
+        font-size: 16px;
+
         .button {
             padding: 12px 20px;
             margin-bottom: 0 !important;
             font-family: $font-urbane-light;
+            font-weight: 400;
             font-size: 14px;
             color: #fff;
             text-transform: uppercase;
             text-decoration: none;
-            background-color: $secondary-color;
-            border-radius: 4px;
+            background-color: $brand-color;
+            border-radius: 0;
             transition: all .35s ease-in-out;
 
             &:hover {
                 color: #fff;
-                background-color: $brand-color;
+                background-color: $secondary-color;
             }
         }
     }
@@ -115,7 +139,7 @@
         .remove {
             position: relative;
             top: 0;
-            line-height: 34px;
+            line-height: 22px;
             color: #b81c23 !important;
             opacity: .7;
 
@@ -131,6 +155,8 @@
 
             .input-text {
                 height: 32px;
+                font-size: 16px;
+                color: $text-color;
                 box-shadow: none;
                 border: 1px solid #e5e5e5;
                 border-radius: 0;
@@ -157,22 +183,24 @@
 
     .cart_totals {
         width: 50%;
+        margin-bottom: 0;
 
         .order-total .woocommerce-Price-amount {
             font-family: $font-urbane-light;
-            font-size: 24px;
+            font-size: 20px;
         }
 
         .checkout-button {
-            padding: 18px 20px;
+            padding: 15px 20px;
             font-family: $font-urbane-light;
-            font-size: 18px;
+            font-weight: 400;
+            font-size: 16px;
             color: #fff;
             text-transform: uppercase;
             text-decoration: none;
             background-color: $brand-color;
             box-shadow: 0 0 5px 0 rgba(0,0,0,.5);
-            border-radius: 4px;
+            border-radius: 0;
             transition: all .35s ease-in-out;
 
             &:hover {
@@ -199,12 +227,21 @@
 
             form.woocommerce-shipping-calculator {
                 padding: 0;
+                margin-bottom: 0;
+
+                [name=calc_shipping] {
+                    margin-bottom: 5px !important;
+                }
             }
         }
     }
 
-    .cart-collaterals > div:not(.cart_totals) {
-        display: none !important;
+    .cart-collaterals {
+        margin-bottom: 0;
+
+        & > div:not(.cart_totals) {
+            display: none !important;
+        }
     }
 
     .woocommerce-shipping-totals {
@@ -219,6 +256,7 @@
 
             label {
                 cursor: pointer;
+                margin-bottom: 0;
             }
 
             input {
@@ -239,7 +277,7 @@
         .fsl-title.title {
             margin: 0 !important;
             font-family: $font-urbane-light;
-            font-size: 20px;
+            font-size: 16px;
         }
 
         .fsl-progress-bar {
@@ -247,8 +285,12 @@
         }
 
         .fsl-notice.notice {
+            padding-top: 10px !important;
+            margin-top: 10px;
+            margin-bottom: 0;
             font-family: $font-urbane-light;
-            font-size: 20px;
+            font-size: 16px;
+            border-top: 2px solid $brand-color;
         }
     }
 
@@ -280,14 +322,16 @@
 
     @media (max-width: 991px) {
         .shop_table {
+            font-size: 16px;
+
             th, td {
-                font-size: 18px;
+                font-size: 16px;
             }
         }
 
-        .cart_totals .order-total .woocommerce-Price-amount {
-            font-size: 22px;
-        }
+        // .cart_totals .order-total .woocommerce-Price-amount {
+        //     font-size: 20px;
+        // }
     }
 
     @media (max-width: 767px) {
@@ -301,6 +345,10 @@
                     margin-top: 10px;
                     margin-left: 0;
                 }
+            }
+
+            .wrapper .section-title {
+                margin-bottom: 0;
             }
         }
 
@@ -333,6 +381,7 @@
 
             .quantity .input-text {
                 height: auto;
+                padding: 4px 8px;
             }
         }
 
@@ -344,6 +393,7 @@
 
         .cart_totals {
             width: 100%;
+            margin-top: 10px;
 
             .order-total .woocommerce-Price-amount {
                 font-size: 18px;
