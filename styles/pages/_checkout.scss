@@ -429,8 +429,21 @@
             padding: 0;
         }
 
-        #wc-stripe-cc-form .wc-stripe-elements-field {
-            padding: 10px !important;
+        #stripe-payment-data {
+            margin-bottom: 0;
+        }
+
+        #wc-stripe-cc-form {
+            .wc-stripe-elements-field {
+                padding: 10px !important;
+            }
+
+            .stripe-card-group,
+            #stripe-exp-element,
+            #stripe-cvc-element,
+            .clear {
+                margin-bottom: 0;
+            }
         }
     }
 
@@ -442,7 +455,11 @@
 
     .devnet_fsl-free-shipping {
         padding: 20px 25px !important;
-        margin: 0 0 15px !important;
+        margin: 0 !important;
+
+        & + #place_order {
+            margin-top: 15px;
+        }
 
         .fsl-title.title {
             margin: 0 !important;
@@ -613,6 +630,15 @@
             .fsl-notice.notice {
                 font-size: 14px;
                 line-height: 20px;
+            }
+        }
+    }
+
+    @media (max-width: 575px) {
+        #wc-stripe-cc-form {
+            .form-row-first,
+            .form-row-last {
+                width: 100% !important;
             }
         }
     }

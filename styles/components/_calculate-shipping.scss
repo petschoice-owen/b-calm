@@ -71,4 +71,10 @@
     @media (max-width: 991px) {
         font-size: 12px;
     }
+
+    @media (max-width: 575px) {
+        & + .shipping-calculator-form #calc_shipping_postcode_field + p button[name=calc_shipping] {
+            padding: 10px 15px;
+        }
+    }
 }

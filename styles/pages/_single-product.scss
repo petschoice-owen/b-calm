@@ -306,10 +306,12 @@
             #size {
                 width: 180px;
                 min-width: initial;
+                height: 42px;
                 margin: 0 0 10px;
                 padding: 8px 6px;
                 font-size: 18px;
                 color: $text-color;
+                background-color: #fff;
                 border: 2px solid $brand-color;
                 border-radius: 0;
                 box-shadow: none;
