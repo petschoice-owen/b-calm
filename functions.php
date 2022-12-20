@@ -169,6 +169,12 @@ if ( function_exists('acf_add_options_page') ) {
 		'menu_title'	=> 'Social Media',
 		'parent_slug'	=> 'general-settings',
 	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> '404 Page',
+		'menu_title'	=> '404 Page',
+		'parent_slug'	=> 'general-settings',
+	));
 }
 
 
@@ -287,5 +293,5 @@ function filter_dropdown_option_html( $html, $args ) {
 add_filter( 'woocommerce_return_to_shop_redirect', 'custom_empty_cart_redirect_url' );
 function custom_empty_cart_redirect_url(){
 	// return 'http://yoursite.com/page-example';
-	return home_url( '/shop/b-calm-product-name' );	
+	return home_url( '/shop/b-calm-cbd-pet-calming-spray' );
 }

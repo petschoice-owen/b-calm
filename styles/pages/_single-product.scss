@@ -52,6 +52,8 @@
         display: flex;
         flex-wrap: wrap;
         padding: 50px 0;
+        opacity: 0;
+        transition: .25s ease-in-out all;
 
         .woocommerce-product-gallery {
             float: none;
@@ -215,12 +217,7 @@
             width: 100%;
             max-width: 55%;
             margin-bottom: 0;
-            opacity: 0;
-            transition: .25s ease-in-out all;
-
-            .show {
-                opacity: 1;
-            }
+            opacity: 1;
         }
 
         .product_title {

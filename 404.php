@@ -7,28 +7,19 @@
 <body <?php body_class(); ?>>
     <?php include 'top-navigation.php'; ?>
     <main class="page-404">
-		<section class="content" style="background-image: url(<?php the_field('background_image_hero_404', 'option'); ?>);">
-			<div class="container">
-				<div class="wrapper">
-					<div class="image-wrapper">
-						<img src="<?php the_field('image_hero_404', 'option'); ?>" alt="404 image" />
-					</div>
-					<div class="text-wrapper">
-						<h1><?php the_field('heading_404', 'option'); ?></h1>
-						<?php if( have_rows('buttons_404', 'option') ): ?>
-							<div class="button-wrapper">
-								<?php while( have_rows('buttons_404', 'option') ) : the_row();
-									$button_text = get_sub_field('button_text', 'option');
-									$button_link = get_sub_field('button_link', 'option'); ?>
-									<a href="<?php echo $button_link; ?>" class="btn-brown"><?php echo $button_text; ?></a>
-								<?php endwhile;
-								else : ?>
-							</div>
-						<?php endif; ?>
-					</div>
-				</div>
-			</div>
-		</section>
+		<section class="hero hero-title">
+            <div class="container container-narrow">
+				<h1 class="text-center"><strong><?php the_field('404_title', 'option'); ?></strong></h1>
+            </div>
+        </section>
+		<section class="content-404">
+            <div class="container container-narrow">
+				<span class="text-404">404</span>
+                <div class="wrapper text-center">
+					<?php the_field('404_content', 'option'); ?>
+                </div>
+            </div>
+        </section>
 		<?php include 'product-range.php'; ?>
     </main>
 <?php get_footer(); ?>

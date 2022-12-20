@@ -258,16 +258,19 @@ var productCarousel = () => {
         $(".product-thumbnails .woocommerce-product-gallery__image").each(function() {
             $(this).click(function(e) {
                 var featuredImage = $(".product-featured .wp-post-image");
-                var selectedImage = $(this).find("img").attr("src");
+                // var selectedImage = $(this).find("img").attr("src");
+                var selectedImage = $(this).find("img").attr('srcset').split(',').pop().trim().split(' ')[0];
 
                 e.preventDefault();
-                $(featuredImage).attr("src",selectedImage);
+                $(featuredImage).attr("srcset","");
+                $(featuredImage).attr("data-o_srcset","");
+                $(featuredImage).attr({"src" : selectedImage, "srcset" : selectedImage});
                 $(".product-thumbnails .woocommerce-product-gallery__image").removeClass("active");
                 $(this).addClass("active");
-            })
+            });
         });
 
-        // change active selected thumbnail and update the featured image
+        // change active selected thumbnail and update the featured image - right/next button - carousel
         $(".product-nav-right").click(function(e) {
             e.preventDefault();
 
@@ -275,12 +278,16 @@ var productCarousel = () => {
                 $(".product-thumbnails .active").removeClass("active").next().addClass("active");
                 
                 var featuredImage = $(".product-featured .wp-post-image");
-                var selectedImage = $(".product-thumbnails .active").find("img").attr("src");
-                $(featuredImage).attr("src",selectedImage);
+                // var selectedImage = $(".product-thumbnails .active").find("img").attr("src");
+                // $(featuredImage).attr("src",selectedImage);
+                var selectedImage = $(".product-thumbnails .active").find("img").attr('srcset').split(',').pop().trim().split(' ')[0];
+                $(featuredImage).attr("srcset","");
+                $(featuredImage).attr("data-o_srcset","");
+                $(featuredImage).attr({"src" : selectedImage, "srcset" : selectedImage});
             }
         });
 
-        // change active selected thumbnail and update the featured image
+        // change active selected thumbnail and update the featured image - left/prev button - carousel
         $(".product-nav-left").click(function(e) {
             e.preventDefault();
 
@@ -288,8 +295,12 @@ var productCarousel = () => {
                 $(".product-thumbnails .active").removeClass("active").prev().addClass("active");
                 
                 var featuredImage = $(".product-featured .wp-post-image");
-                var selectedImage = $(".product-thumbnails .active").find("img").attr("src");
-                $(featuredImage).attr("src",selectedImage);
+                // var selectedImage = $(".product-thumbnails .active").find("img").attr("src");
+                // $(featuredImage).attr("src",selectedImage);
+                var selectedImage = $(".product-thumbnails .active").find("img").attr('srcset').split(',').pop().trim().split(' ')[0];
+                $(featuredImage).attr("srcset","");
+                $(featuredImage).attr("data-o_srcset","");
+                $(featuredImage).attr({"src" : selectedImage, "srcset" : selectedImage});
             }
         });
     }
@@ -297,10 +308,8 @@ var productCarousel = () => {
 
 // single product - show product information
 var productInformation = () => {
-    if ($(".single-product .entry-summary").length) {
-        setTimeout(() => {
-            $(".single-product .entry-summary").css("opacity" , "1");
-        }, 100);
+    if ($(".single-product .product.type-product").length) {
+        $(".single-product .product.type-product").css("opacity" , "1");
     }
 }
 
@@ -314,7 +323,6 @@ $(document).ready(function() {
     navToggler();
     footerFunctions();
     productQuantity();
-    productInformation();
 });
   
 $(window).resize(function() {
@@ -326,5 +334,6 @@ $(window).on("load", function() {
     mainAutoPadding();
     accordion();
     productCarousel();
+    productInformation();
     new WOW().init();
 });

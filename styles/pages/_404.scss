@@ -5,15 +5,78 @@
 // -----------------------------------------------------------------------------
 
 .page-404 {
-    .content-section {
-        * {
-            color: $text-color;
+    .hero {
+        padding-top: 100px;
+    }
+
+    .text-404 {
+        display: block;
+        margin: auto;
+        padding-top: 50px;
+        line-height: 1;
+        font-size: 145px;
+        text-align: center;
+        color: $brand-color;
+    }
+
+    .content-404 {
+        color: $text-color;
+
+        a {
+            color: $secondary-color;
+        }
+
+        li, p {
+            line-height: 1.4;
         }
         
         ul, ol {
             li + li {
                 margin-top: 5px;
             }
+        }
+
+        p + p {
+            margin-top: 5px;
+        }
+
+        .wrapper {
+            padding: 100px 0;
+        }
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) { 
+        .container-narrow {
+            max-width: 820px;
+        }
+
+        .hero {
+            padding-top: 80px;
+        }
+
+        .content-404 .wrapper {
+            padding: 70px 0 50px;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .text-404 {
+            font-size: 130px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .hero {
+            padding-top: 70px;
+        }
+
+        .text-404 {
+            padding-top: 30px;
+            font-size: 105px;
+        }
+
+        .content-404 .wrapper {
+            padding: 50px 0 40px;
         }
     }
 }
