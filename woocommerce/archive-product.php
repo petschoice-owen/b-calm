@@ -52,7 +52,7 @@ get_header( 'shop' );
 
 	<section class="hero hero-title">
 		<div class="container">
-			<h1 class="text-center"><strong>Davies Shop</strong></h1>
+			<h1 class="text-center"><strong>B-Calm Shop</strong></h1>
 		</div>
 	</section>
 	
