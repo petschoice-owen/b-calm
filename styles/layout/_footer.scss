@@ -219,11 +219,16 @@
                 left: -9%;
             }
         }
+        
+        .footer-links {
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
 
         .copyright p,
         .footer-links a {
-            font-size: 14px;
-        }        
+            font-size: 13px;
+        }
     }
 
     @media (max-width: 767px) {

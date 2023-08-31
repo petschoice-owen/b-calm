@@ -448,4 +448,65 @@
             }
         }
     }
-}   
+}
+
+.woocommerce-cart .page-default {
+    .woocommerce-notices-wrapper,
+    .woocommerce-notices-wrapper .woocommerce-info {
+        display: none;
+    }
+
+    .restricted-message-wrapper {
+        display: none !important;
+        float: right;
+        width: 53%;
+        padding: 0 !important;
+        margin-top: 10px;
+    }
+
+    .restricted-message {
+        width: 94%;
+        margin-left: auto;
+        padding: 15px;
+        color: #fff;
+        font-size: 15px !important;
+        background: #d5a940;
+    }
+
+    @media (max-width: 1199px) {
+        .restricted-message-wrapper {
+            width: 55%;
+        }
+
+        .restricted-message {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .restricted-message-wrapper {
+            float: none;
+            width: 100%;
+            margin-top: 15px;
+        }
+        
+        .restricted-message {
+            width: 100%;
+        }
+    }
+}
+
+.restricted-zone.woocommerce-cart .page-default {
+    .woocommerce-notices-wrapper,
+    .woocommerce-shipping-methods,
+    .woocommerce-shipping-destination,
+    .order-total,
+    .wc-proceed-to-checkout {
+        display: none !important;
+    }
+
+    .woocommerce .cart-collaterals .restricted-message-wrapper,
+    .woocommerce .cart-collaterals .restricted-message {
+        display: block !important;
+    }
+}
